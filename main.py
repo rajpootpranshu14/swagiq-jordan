@@ -16,15 +16,15 @@ import concurrent
 
  
 oot_channel_id_list = [
-'708939235259973652','709419284975059014'
+'773390146406055937','774116094457806878','756445815001710632'
 ]
 
 
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf)?(\?)?$', re.IGNORECASE)
 
-apgscore = 60
-nomarkscore = 30
-markscore = 15
+apgscore = 1000
+nomarkscore = 600
+markscore = 300
 
 async def update_scores(content, answer_scores):
     global answer_pattern
@@ -126,7 +126,7 @@ class Bot(discord.Client):
         self.answer_scores = answer_scores
 
         # embed creation
-        self.embed=discord.Embed(title="**__LOCO TRIVIA__**",color=0x0ff14)
+        self.embed=discord.Embed(title="**__SWAG IQ  TRIVIA__**",color=0x0ff14)
         self.embed.add_field(name=f"**Aɴsᴡᴇʀ 1**", value="0.0 ", inline=True)
         self.embed.add_field(name=f"**Aɴsᴡᴇʀ 2**", value="0.0 ", inline=True)
         self.embed.add_field(name=f"**Aɴsᴡᴇʀ 3**", value="0.0 ", inline=True)
@@ -198,10 +198,10 @@ class Bot(discord.Client):
             if answer == 3:
                 three_cross = ":x:"
             
-        self.embed=discord.Embed(title=f"**__LOCO TRIVIA__**\n\n**__Counter Answer__**\n**Answer :one: :- {lst_scores[0]}{one_check}\nAnswer :two: :- {lst_scores[1]}{two_check}\nAnswer :three: :- {lst_scores[2]}{three_check}**\n\n**__Crowd Result__** \n**Answer :- {one_check}{two_check}{three_check}\n__Crowd Wrong__** \n**Answer :- {wrong_answer}**",color=0x0ff14)
-        self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/583675981466828801/685776310525755392/unnamed.png")
+        self.embed=discord.Embed(title=f"**__SWAG IQ  TRIVIA__**\n\n**__Counter Answer__**\n**Answer :one: :- {lst_scores[0]}{one_check}\nAnswer :two: :- {lst_scores[1]}{two_check}\nAnswer :three: :- {lst_scores[2]}{three_check}**\n\n**__Crowd Result__** \n**Answer :- {one_check}{two_check}{three_check}\n__Crowd Wrong__** \n**Answer :- {wrong_answer}**",color=0x0ff14)
+        self.embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/740597627036500080/761070118183763968/google-icon-_1__1.gif")
         self.embed.set_image(url="https://cdn.discordapp.com/attachments/625229957135597578/625246299947794432/SAVE_20190922_135432.gif")
-        self.embed.set_footer(text="LOCO ANSWER | BOT")
+        self.embed.set_footer(text="MADE BY | MR BROTHER")
 
 
         if self.embed_msg is not None:
@@ -225,7 +225,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "lo":
+        if message.content.lower() == "s":
             #await message.delete()
            # if BOT_OWNER_ROLE in []:
             self.embed_msg = None
@@ -266,7 +266,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('NzA5Nzg3MjA1MTg2NDg2MzEy.Xrq_Bg.52OLHukHd4-MFHYWLdavvDC_jHw'))
+    loop.create_task(bot.start('Nzc0MzIzNjQ5NDM1NTMzMzgy.X6WHGA.iZSnnNvJjaOgafqbPWfKnftoNpk'))
     loop.run_forever()
 
 
@@ -275,7 +275,7 @@ def selfbot_process(update_event, answer_scores):
     selfbot = SelfBot(update_event, answer_scores)
 
     loop = asyncio.get_event_loop()
-    loop.create_task(selfbot.start('NzAyNDk4MTc1OTM1ODQwMzE2.XqQvjw.VY9cwAvxn-9dgy8MtEM8PfebLwU',
+    loop.create_task(selfbot.start('NzQ0MjAxMDcxNDA4NDQ3NjA4.X1MEJQ.8FaPic7RRIPPs_zV3OUdC_oOv1',
                                    bot=False))
     loop.run_forever()
 
