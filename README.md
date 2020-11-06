@@ -1,1 +1,1 @@
-# swagiq-jordan
+# CHECKING SCRIPT
